@@ -1,0 +1,10 @@
+1.git init
+
+2. git remote add origin https://github.com/irameshinfo/hackthon_use_case.git
+
+3. git add .
+
+4. git commit -m "test"
+
+5. git push --set-upstream origin master
+
