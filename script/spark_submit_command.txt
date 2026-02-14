@@ -1,0 +1,1 @@
+gcloud dataproc jobs submit pyspark gs://rameshsamplebucket/gcs_to_bq_load_hcl_hackthon.py --cluster=my-cluster --region=us-central1

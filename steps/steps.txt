@@ -1,0 +1,45 @@
+1. command to crate cluster
+
+gcloud dataproc clusters create my-cluster --region=us-central1 --zone=us-central1-a --master-machine-type=n1-standard-4 --master-boot-disk-size=100GB --num-workers=2 --worker-machine-type=n1-standard-4 --worker-boot-disk-size=100GB --image-version=2.1-debian11 --project=ranjanrishi-project
+
+2. command to copy the input file from local system to gcs_bq_load
+
+gsutil cp C:\Bigdata_practice\hcl\input_files\* gs://rameshsamplebucket
+
+3.command move the script file to move data from gcs to bq
+
+gsutil cp C:\Bigdata_practice\hcl\script\gcs_to_bq_load_hcl_hackthon.py gs://rameshsamplebucket
+
+4.command to create temp bucket in gcs
+
+gsutil mb ramtempbucket
+
+5. command to create the data sets in BQ
+
+CREATE SCHEMA `ranjanrishi-project.curated`
+OPTIONS (
+  location = 'us-central1'
+);
+
+CREATE SCHEMA `ranjanrishi-project.reporting`
+OPTIONS (
+  location = 'us-central1'
+);
+
+CREATE SCHEMA `ranjanrishi-project.testdataset`
+OPTIONS (
+  location = 'us-central1'
+);
+
+6. run curated_layer_table_script.sql in BQ
+
+7. compile the sp_curated_layer_data_load.py and kpi_report_query.py in BQ
+
+6. create composer
+
+move the composer_script.py file inside DAG folder
+
+run the dag and verify chart and log. once it got completed verify the table data in BQ
+
+
+
